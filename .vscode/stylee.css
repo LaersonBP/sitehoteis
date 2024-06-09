@@ -1,0 +1,211 @@
+* {
+    margin: 0;   /* Remove margens padrão do corpo */
+    padding: 0;   /* Adiciona espaçamento interno ao contêiner de navegação */
+    box-sizing: border-box;
+    list-style: none;               /* remover a bolinha da lista */
+    
+}
+body {
+    height: 100vw;
+    background-image: radial-gradient(#fca7b1,#967ccc);  
+    background-size: cover; /* Faz com que a imagem cubra toda a área do fundo */
+    background-repeat: no-repeat; /* Impede a repetição da imagem */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; 
+    color: black;
+    font-size: 19px;
+    overflow: hidden;   /* limpa o scroll do master retira*/
+    
+}
+header {
+    margin: 0;
+    width: 60vw;
+    position: fixed;     /* fixar ao topo */
+    transform: translateX(-50%);
+    left: 50%;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    z-index: 2;      /* para coocar o conteudo a frente do texto*/
+     
+    
+       & .logo {
+           width: 400px;
+           transform: translateX(-310px);
+           border-radius: 30px;
+                    
+             }
+       & .nomesite {
+           font-size: 40px; 
+           font-family:cursive;
+           color:antiquewhite;
+           position: absolute;
+           align-items: center;
+           transform: translateX(-160px);
+       }
+       & .insta {
+           position: fixed;
+           width: 40px;
+           transform: translateX(1150px);
+       }
+       & nav {
+             & ul {
+                color: antiquewhite;
+                transform: translateX(244px );
+                font-size: 16px;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 12px;
+             }
+       }
+
+}
+section {
+     
+     position: relative;
+
+       & .list {
+           width: 70vw;
+           height: 100px;
+           margin: auto; /* centraliza*/
+           position: relative;
+       
+       & .item {
+        
+        position: relative;        /* vou definir exatamente onde quero que esteja*/
+        inset: 0;
+        
+        
+       
+            & .img-casa1{
+                margin: 0;
+               height: 20vw;
+               display: flex;
+               position: absolute;
+               top: 220%;
+               transform: translateX(70%);
+               z-index: 2;
+                
+                 & .casaone {
+                    border-radius: 30px;
+                 }
+            
+        }
+        & .content {
+            
+            color: antiquewhite;
+            
+            position: relative;
+            width: 70%;
+            bottom: 0; /* Alinhe o conteúdo no final do .item */
+            display: flex;
+            flex-direction: column;
+            transform: translateY(400%);   
+            z-index: 1;         
+            
+            gap: 2px;
+
+                   & .oque {
+                    font-weight:bold ;
+                   }
+                   & h2 {
+                    font-size: 40px;
+
+                   }
+                   & .description {
+                    text-align: right;
+                    font-weight: bold;
+                   
+                   }
+                   & .information {
+                    border-radius: 30px;  
+                    text-transform: uppercase;    
+                    background-color: rgba(158, 85, 227, 0.10);   
+                    width: 100px;
+                    align-items: center;
+                    border: 2px solid;
+                    cursor: pointer;
+                    font-weight: bold;
+                    
+                    &:hover{
+                        background-color: #00FF7F;
+                       }
+                }
+                   
+        }
+      }
+      
+    }
+    .copy {
+        color: antiquewhite;
+        justify-content: end;
+        align-items: center;
+        transform: translate(400px ,600px);
+    }
+}
+.arrows button img {
+    width: 80px;
+    position: absolute;
+    transform: translate(-300px , 300px) scale(-1);
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+    
+}
+.arrow button img{
+   width: 80px;
+   position: absolute;
+   transform: translate(253px , 289px) scale(1);
+   top: 50%;
+   left: 50%;
+   cursor: pointer;
+}
+
+
+section {
+    & .list {
+        & .item {
+                 transform: translateX(100vw);
+                 transition: 0.5s;
+                 opacity: 0;
+            & .img-casa1{
+                & .casaone {
+                  transform: rotate(2);
+                  transition: 0.5s;
+                  transition-delay: 0.3s;
+                  opacity: 0;
+                }
+            }
+            & .content {
+                .oque, h2, .description {
+                 transform:translateX(200px);
+                 transition: 0.9s;
+                 transition-delay:0.3s ;
+                 opacity: 0;
+
+                }
+            } 
+        }
+        & .active {
+            transform: translate(0);
+            opacity: 1;
+             
+            & .img-casa1{
+                & .casaone {
+                  transform: rotate(0);
+                  opacity: 1;
+                }
+            }
+
+
+            & .content {
+                .oque, h2, .description {
+                 transform:translateX(0);
+                 opacity: 1;
+
+                }
+            } 
+          }
+    }
+}
